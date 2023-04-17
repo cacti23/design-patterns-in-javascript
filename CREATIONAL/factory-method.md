@@ -1,6 +1,6 @@
 ![factory method structure](../images/factory-method-strucuture.png)
 
-🏗️ Structure
+## Structure 🏗️
 
 1. The product declares the interface, which is common to all objects that can be produced by the creator and its subclasses
 
@@ -14,7 +14,7 @@
 
 > Note that the factory method doesn’t have to create new instances all the time. It can also return existing objects from a cache, an object pool, or another source.
 
-💻 Typescript Example
+## Typescript Example 💻
 
 ```typescript
 /**
