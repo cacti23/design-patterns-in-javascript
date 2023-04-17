@@ -15,12 +15,7 @@ Here's an example of the Builder pattern in TypeScript:
 
 ```javascript
 class Pizza {
-  size: number;
-  cheese: boolean;
-  pepperoni: boolean;
-  bacon: boolean;
-
-  constructor(builder: PizzaBuilder) {
+  constructor(builder) {
     this.size = builder.size;
     this.cheese = builder.cheese;
     this.pepperoni = builder.pepperoni;
@@ -29,31 +24,29 @@ class Pizza {
 }
 
 class PizzaBuilder {
-  size: number;
-  cheese: boolean = false;
-  pepperoni: boolean = false;
-  bacon: boolean = false;
-
-  constructor(size: number) {
+  constructor(size) {
     this.size = size;
+    this.cheese = false;
+    this.pepperoni = false;
+    this.bacon = false;
   }
 
-  setCheese(value: boolean): PizzaBuilder {
+  setCheese(value) {
     this.cheese = value;
     return this;
   }
 
-  setPepperoni(value: boolean): PizzaBuilder {
+  setPepperoni(value) {
     this.pepperoni = value;
     return this;
   }
 
-  setBacon(value: boolean): PizzaBuilder {
+  setBacon(value) {
     this.bacon = value;
     return this;
   }
 
-  build(): Pizza {
+  build() {
     return new Pizza(this);
   }
 }
